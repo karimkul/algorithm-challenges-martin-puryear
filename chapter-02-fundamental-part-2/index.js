@@ -207,7 +207,8 @@ console.log(fibonacci(6));
 // function sumToOne(num) {
 // }
 
-// 10. Clock Hnad Angles
+// 10. Clock Hand Angles
+// function clockHandAngles(num) {}
 // 11. Is Prime
 function isPrime(num) {
     if (num <= 1) return false;
@@ -222,3 +223,27 @@ function isPrime(num) {
     return true;
 }
 console.log(isPrime(7));
+
+// 12. Rockin' the Dojo Sweatshirt
+function sweatshirtPricing(num) {
+    let sweatshirtPrice = 20;
+    let totalPrice = sweatshirtPrice * num;
+    let discount = 0;
+
+    if (num === 1) {
+        discount = (9 / 100) * totalPrice;
+    } else if (num === 2) {
+        discount = (19 / 100) * totalPrice;
+    } else if (num >= 3) {
+        discount = (35 / 100) * totalPrice;
+    }
+    totalPrice = totalPrice - discount;
+    return `$${totalPrice.toFixed(2)}`;
+}
+console.log(sweatshirtPricing(1));
+console.log(sweatshirtPricing(2));
+console.log(sweatshirtPricing(3));
+console.log(sweatshirtPricing(4));
+
+// 13. Clock Hand Angles, Revisited
+//
