@@ -180,5 +180,76 @@ function secondToLast(arr) {
 let result = [42, true, "Kate", 7];
 console.log(secondToLast(result));
 
-// 15. Second to Large
-function secondToLarge(arr) {}
+// 15. Second to Large ??????????
+// function secondToLarge(arr) {
+//     if (arr.length < 2) {
+//         return null;
+//     }
+
+// }
+
+// 16. Nth-to-Last
+function nthToLast(arr, num) {
+    if (num <= 2 || num > arr.length) {
+        return null;
+    }
+    return arr[arr.length - num];
+}
+let array1 = [5, 2, 3, 6, 4, 9, 7];
+let num1 = 3;
+console.log(nthToLast(array1, num1));
+
+// 17. Nth-to-Largest ?????????
+function nthLargest(arr, n) {
+    if (n <= 0 || n > arr.length) {
+        return null;
+    }
+
+    const sortedArr = arr.slice().sort((a, b) => b - a);
+    return sortedArr[n - 1];
+}
+
+let array = [5, 2, 3, 6, 4, 9, 7];
+let n = 3;
+console.log(nthLargest(array, n));
+
+// 18. Credit Card Validation
+// function isCreditCardValid(digitArr) {
+// }
+
+// 19. Shuffle
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+}
+
+const originalArray = [1, 2, 3, 4, 5];
+shuffle(originalArray);
+console.log(originalArray);
+
+// 20. Remove Range ??????
+function removeRange(arr, start, end) {
+    if (start < 0 || end >= arr.length || start > end) {
+        return arr;
+    }
+
+    const newArray = arr.slice(0, start);
+
+    for (let i = 0; i < newArray.length; i++) {
+        arr[i] = newArray[i];
+    }
+
+    arr.length = newArray.length;
+
+    return arr;
+}
+
+const arrray = [1, 5, 10, 15, 20, 25];
+removeRange(arrray, 10, 20);
+console.log(arrray);
+
+// 21. Intermediate Sums
+function intermediateSums(arr) {}
