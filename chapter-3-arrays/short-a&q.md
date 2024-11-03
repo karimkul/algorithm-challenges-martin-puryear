@@ -4,7 +4,7 @@ An array is a data structure that stores a collection of elements, usually of th
 
 # 2. What types of values can be held in an array?
 
-### Arrays can hold a variety of value types, including:
+## Arrays can hold a variety of value types, including:
 
 #### Numbers:
 
