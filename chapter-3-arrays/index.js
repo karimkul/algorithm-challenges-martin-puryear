@@ -252,4 +252,32 @@ removeRange(arrray, 10, 20);
 console.log(arrray);
 
 // 21. Intermediate Sums
-function intermediateSums(arr) {}
+// function intermediateSums(arr) {}
+
+// 22. Double Trouble
+function doubleTrouble(arr) {
+    const result = [];
+    for (let element of arr) {
+        result.push(element, element);
+    }
+    return result;
+}
+console.log(doubleTrouble([4, "Ulysses", 42, false]));
+
+// 23. Zip It
+const zipIt = function (arr1, arr2) {
+    let result = [];
+    let minLength = Math.min(arr1.length, arr2.length);
+    for (let i = 0; i < minLength; i++) {
+        result.push(arr1[i]);
+        result.push(arr2[i]);
+    }
+    if (arr1.length > minLength) {
+        result.push(...arr1.slice(minLength));
+    }
+    if (arr2.length > minLength) {
+        result.push(...arr2.slice(minLength));
+    }
+    return result;
+};
+console.log(zipIt([1, 2], [10, 20, 30, 40]));
