@@ -192,4 +192,138 @@ console.log(stringIsPalindrome("oho"));
 // 13. Longest Palindrome?????
 // function longestPalindrome(str) {}
 
-// 14.
+// 14. Is Word Alphabetical ?????????
+// 15. D Get Jiggy
+function dGetJiggy(str) {
+    return `${str.slice(1)} to the ${str[0].toUpperCase()}`;
+}
+console.log(dGetJiggy("Dylan"));
+
+// 16. Common Suffix
+// 17. Book Index
+// 18. Drop the Mike
+function formatString(str) {
+    let trimmedStr = str.trim();
+
+    if (trimmedStr.toLowerCase().includes("mike")) {
+        return "stunned silence";
+    }
+    const words = trimmedStr.split(" ");
+    const capitalizedWords = [];
+
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i];
+        if (word.length > 0) {
+            capitalizedWords.push(word.charAt(0).toUpperCase() + word.slice(1));
+        } else {
+            capitalizedWords.push(word);
+        }
+    }
+    return capitalizedWords.join(" ");
+}
+console.log(formatString("  hello world")); // "Hello World"
+console.log(formatString("  mike is here")); // "stunned silence"
+console.log(formatString("  alice and mike")); // "stunned silence"
+console.log(formatString("  this is a test")); // "This Is A Test"
+
+// 19. Coin Change with Object
+function getOptimalCoinConfiguration(cents) {
+    const coins = {
+        quarters: 25,
+        dimes: 10,
+        nickels: 5,
+        pennies: 1
+    };
+
+    const coinCount = {
+        quarters: 0,
+        dimes: 0,
+        nickels: 0,
+        pennies: 0
+    };
+
+    for (const coin in coins) {
+        while (cents >= coins[coin]) {
+            coinCount[coin]++;
+            cents -= coins[coin];
+        }
+    }
+
+    return coinCount;
+}
+
+console.log(getOptimalCoinConfiguration(99)); // { quarters: 3, dimes: 2, nickels: 0, pennies: 4 }
+console.log(getOptimalCoinConfiguration(41)); // { quarters: 1, dimes: 1, nickels: 1, pennies: 1 }
+console.log(getOptimalCoinConfiguration(0)); // { quarters: 0, dimes: 0, nickels: 0, pennies: 0 }
+
+// 20. Max/Min/Avarage with Object
+function calculateStates(data) {
+    let numbers = data.numbers;
+
+    let minNum = Math.min(...numbers);
+    let maxNum = Math.max(...numbers);
+
+    let sum = 0;
+    for (let num of numbers) {
+        sum += num;
+    }
+    let averageNum = sum / numbers.length;
+
+    return {
+        min: minNum,
+        average: averageNum,
+        max: maxNum
+    };
+}
+var data = {
+    numbers: [10, 20, 30, 40, 50]
+};
+
+console.log(calculateStates(data)); // { max: 50, min: 10, average: 30 }
+
+// 21. Zip Arrays into Map
+function zipToObject(keys, values) {
+    let obj = {};
+    for (let i = 0; i < keys.length; i++) {
+        obj[keys[i]] = values[i];
+    }
+    return obj;
+}
+const keys = ["a", "b", "c"];
+const values = [1, 2, 3];
+
+console.log(zipToObject(keys, values));
+
+// 22. Invert Hash  ????????
+function invertHash(assocObj) {
+    let obj = {};
+
+    for (let key in assocObj) {
+        if (assocObj.hasOwnProperty(key)) {
+            let value = assocObj[key];
+
+            obj[value] = key;
+        }
+    }
+
+    return obj;
+}
+const data2 = {
+    name: "Zaphod",
+    charm: "high",
+    morals: "dicey"
+};
+console.log(invertHash(data2));
+
+// 23. Associative Array: Number of Values (without .Length)
+function lengthOfObj(data) {
+    const length = Object.keys(data).length;
+    return length;
+}
+
+const data3 = {
+    band: "Travis Shredd & the Good Ol' Homeboys",
+    style: "Country/Metal/Rap",
+    album: "668: The Neighbor of the Beast"
+};
+console.log(lengthOfObj(data3));
