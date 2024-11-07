@@ -327,3 +327,38 @@ const data3 = {
     album: "668: The Neighbor of the Beast"
 };
 console.log(lengthOfObj(data3));
+
+// 24. String.concat
+function stringConcat(str1, str2, str3) {
+    const result = str1.concat(` ${str2}, ${str3}`);
+    return result;
+}
+const str1 = "Hello";
+const str2 = "From";
+const str3 = "Java Script";
+
+console.log(stringConcat(str1, str2, str3));
+
+// 25. String.slice
+function stringSlice(str, start, end) {
+    return str.slice(start, end);
+}
+console.log(stringSlice("Hello my boy", 1, 8));
+
+// 26. String.trim
+function stringTrim(str) {
+    return str.trim();
+}
+console.log(stringTrim("   Hello From JavaScript       "));
+
+// 27. String.split
+function stringSplit(str) {
+    return str.split(" ");
+}
+console.log(stringSplit("Hello from JavaScript"));
+
+// 28 String.search
+function stringSearch(str, search) {
+    return str.search(search);
+}
+console.log(stringSearch("hello ho yoooo", " "));
