@@ -362,3 +362,5 @@ function stringSearch(str, search) {
     return str.search(search);
 }
 console.log(stringSearch("hello ho yoooo", " "));
+
+
